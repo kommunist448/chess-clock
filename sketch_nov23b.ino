@@ -57,12 +57,12 @@ void chessClock() {
     disp1.point(1);
     disp2.displayClock(MIN1, SEC1);
     disp2.point(1);
-  if (MIN1 != 0 && SEC1 != 0) {
+  if (MIN1 != 0 || SEC1 != 0) {
     if (bt1 == true) {
       if (MIN != 0) {
         SEC--;
         delay(1000);
-        if (SEC == 0) {
+        if (SEC == -1) {
           SEC = 59;
           MIN--;
     }
@@ -83,12 +83,12 @@ void chessClock() {
    disp1.displayClock(MIN, SEC);
   }
  }
- if (MIN != 0 && SEC != 0){
+ if (MIN != 0 || SEC != 0){
  if (bt2 == true){
   if(MIN1 != 0){
     SEC1--;
     delay(1000);
-    if (SEC1 == 0){
+    if (SEC1 == -1){
       SEC1 = 59;
       MIN1--;
     }
